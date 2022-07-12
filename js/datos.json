@@ -4,41 +4,41 @@
        "nombre": "Roma soy yo",
        "tipo":"fantasia",
        "importe": 50,
-       "imagen": "images/libro1.jpg"
+       "imagen": "./images/libro1.jpg"
     },
     {
         "id": 2,
         "nombre": "Aventuras de S.H",
         "tipo":"fantasia",
         "importe": 60,
-        "imagen": "images/libro2.jpg"
+        "imagen": "./images/libro2.jpg"
     },
     {
         "id": 3,
         "nombre": "Ciudad medialuna",
         "tipo":"juvenil",
         "importe": 80,
-        "imagen": "images/libro3.jpg"
+        "imagen": "./images/libro3.jpg"
      },
      {
         "id": 4,
         "nombre": "Fleur",
         "tipo":"juvenil",
         "importe": 70,
-        "imagen": "images/libro4.jpg"
+        "imagen": "./images/libro4.jpg"
      },
      {
         "id": 5,
         "nombre": "Gravity Falls",
         "tipo":"infantil",
         "importe": 30,
-        "imagen": "images/libro5.jpg"
+        "imagen": "./images/libro5.jpg"
      },
      {
         "id": 6,
         "nombre": "El Principito",
         "tipo":"infantil",
         "importe": 40,
-        "imagen": "images/libro6.jpg"
+        "imagen": "./images/libro6.jpg"
      }
  ]
