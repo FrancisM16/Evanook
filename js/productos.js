@@ -1,5 +1,4 @@
-import { libros } from "./data.js"
-const librosTotales = libros
+import { librosTotales } from "./operaciones.js"
 const btns = document.querySelectorAll("#filters .btn");
 const tiendaLibros = document.querySelectorAll(".libro");
 const btnsCard = document.querySelectorAll(".card-body button");
@@ -42,7 +41,6 @@ btnsCard.forEach((button) => {
             .dataset
             .libro)
         const libroSeleccionado = librosTotales.find(libro => libro.id === id)
-        console.log({ libroSeleccionado })
         guardarDatos(libroSeleccionado)
         Toastify({
             text: `"${libroSeleccionado.nombre}" fue agregado al carrito`,
@@ -57,7 +55,6 @@ btnsCard.forEach((button) => {
 });
 
 function guardarDatos(libroSeleccionado) {
-    console.log({ libroSeleccionado })
     const { id, nombre } = libroSeleccionado
     const libro = {
         id: id,
@@ -65,7 +62,6 @@ function guardarDatos(libroSeleccionado) {
         precio: libroSeleccionado.precioFinal(),
         cantidad: 1
     }
-    console.log(libro)
     let localLibros = JSON.parse(localStorage.getItem("localLibros")) ?? []
 
     let libroExist = localLibros.find(lib => lib.id === libro.id)
