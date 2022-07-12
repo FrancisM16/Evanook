@@ -11,7 +11,7 @@ function crearTarjetas(data) {
         libros.innerHTML += `<div class="libro ${tipo} col-md-3">
                                 <div class="card border-0 shadow-sm">
                                     <div class="card-body" data-libro="${id}">
-                                        <img src="${imagen}" alt="libro1">
+                                        <img src="${imagen}" alt="libro${id}">
                                         <div class="m-4">
                                             <h4 class="card__title">${nombre}</h4>
                                             <h5 class="card__price">$${libro.precioFinal()}</h5>
