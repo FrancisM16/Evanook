@@ -33,6 +33,7 @@ function filterLibro(value) {
     });
 }
 
+console.log(btnsCard)
 btnsCard.forEach((button) => {
     button.addEventListener('click', (e) => {
         e.preventDefault()

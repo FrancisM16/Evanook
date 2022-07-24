@@ -2,7 +2,7 @@
    {
       "id": 1,
       "nombre": "Roma soy yo",
-      "tipo": "fantasía",
+      "tipo": "fantasia",
       "importe": 50,
       "imagen": "./images/libro1.jpg",
       "destacado": true
@@ -58,9 +58,9 @@
    {
       "id": 8,
       "nombre": "Aventuras de S.H",
-      "tipo": "fantasía",
+      "tipo": "fantasia",
       "importe": 60,
-      "imagen": "./images/libro2.jpg",
+      "imagen": "https://images.cdn2.buscalibre.com/fit-in/360x360/8e/28/8e2808346ffb11afb7f118576999050a.jpg",
       "destacado": true
    }
 ]

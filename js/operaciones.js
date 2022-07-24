@@ -1,17 +1,26 @@
 import { Libro } from "./libroClass.js"
-const URL = `http://127.0.0.1:5501/datos.json`
+const URL = `../datos.json`
 export const librosTotales = []
 
-function crearTarjetasDestacadas(data) {
-    const libros = document.getElementById("libros");
-    data = data.filter(lib => lib.destacado == true)
-    crearTarjetas(data, libros)
+function obtenerLibrosFiltrados(data, ubicacion) {
+    switch (ubicacion) {
+        case "index":
+            return data.filter(lib => lib.destacado == true)
+        case "fantasia":
+            return data.filter(lib => lib.tipo == "fantasia")
+        case "infantil":
+            return data.filter(lib => lib.tipo == "infantil")
+        case "juvenil":
+            return data.filter(lib => lib.tipo == "juvenil")
+        default:
+            return data
+    }
 }
 
-function crearTarjetasFantasia(data) {
-    const libros = document.getElementById("librosFantasia");
-    data = data.filter(lib => lib.tipo == "fantasía")
-    crearTarjetas(data, libros)
+function filtrarTarjetas(data, ubicacion) {
+    const libros = document.getElementById("libros");
+    const librosFiltrados = obtenerLibrosFiltrados(data, ubicacion)
+    crearTarjetas(librosFiltrados, libros)
 }
 
 function crearTarjetas(data, libros) {
@@ -22,7 +31,7 @@ function crearTarjetas(data, libros) {
         libros.innerHTML += `<div class="libro ${tipo} col-md-3">
                                 <div class="card border-0 shadow-sm">
                                     <div class="card-body" data-libro="${id}">
-                                        <img src="../${imagen}" alt="libro${id}">
+                                        <img src="${imagen}" alt="libro${id}">
                                         <div class="m-4">
                                             <h4 class="card__title">${nombre}</h4>
                                             <h5 class="card__price">$${libro.precioFinal()}</h5>
@@ -36,12 +45,23 @@ function crearTarjetas(data, libros) {
     });
 }
 
+const obtenerOrigenUrl = (ruta) => {
+    if (ruta.includes("pages")) {
+        const rutaParseada = ruta.split("/")[2]
+        return rutaParseada.substring(0, rutaParseada.length - 5)
+    } else {
+        const rutaParseada = ruta.split("/")[1]
+        return rutaParseada.substring(0, rutaParseada.length - 5)
+    }
+}
+
 const obtenerContenido = (URL) => {
     fetch(URL)
         .then((response) => response.json())
         .then((data) => {
-            crearTarjetasDestacadas(data)
-            //crearTarjetasFantasia(data)
+            const ruta = window.location.pathname
+            const ubicacion = obtenerOrigenUrl(ruta)
+            filtrarTarjetas(data, ubicacion)
         })
         .catch((e) => { console.log({ e }) })
 }
