@@ -4,7 +4,7 @@
       "nombre": "Roma soy yo",
       "tipo": "fantasía",
       "importe": 50,
-      "imagen": "../images/libro1.jpg",
+      "imagen": "./images/libro1.jpg",
       "destacado": true
    },
    {
@@ -12,7 +12,7 @@
       "nombre": "H de Harry",
       "tipo": "juvenil",
       "importe": 50,
-      "imagen": "../images/libro8.jpg",
+      "imagen": "./images/libro8.jpg",
       "destacado": true
    },
    {
@@ -20,7 +20,7 @@
       "nombre": "Ciudad medialuna",
       "tipo": "juvenil",
       "importe": 80,
-      "imagen": "../images/libro3.jpg",
+      "imagen": "./images/libro3.jpg",
       "destacado": true
    },
    {
