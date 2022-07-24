@@ -1,5 +1,5 @@
 const encabezadoValores = ['ID', 'Nombre', 'Cantidad', 'Precio Final']
-const btnBorrarCarrito = document.getElementById("btnBorrar")
+//const btnBorrarCarrito = document.getElementById("btnBorrar")
 let suma = 0.0;
 
 export function recuperoDatos() {
@@ -50,10 +50,10 @@ function mostrarLibrosComprados() {
     }
 }
 
-btnBorrarCarrito.addEventListener('click', (e) => {
-    localStorage.removeItem("localLibros")
-}
-)
+// btnBorrarCarrito.addEventListener('click', (e) => {
+//     localStorage.removeItem("localLibros")
+// }
+// )
 
 mostrarLibrosComprados()
 
