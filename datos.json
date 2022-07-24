@@ -4,7 +4,7 @@
       "nombre": "Roma soy yo",
       "tipo": "fantasia",
       "importe": 50,
-      "imagen": "./images/libro1.jpg",
+      "imagen": "https://drive.google.com/uc?export=view&id=1g1KC4nniLERZD5mSrsNQpi1OM45p_2yW",
       "destacado": true
    },
    {
@@ -12,7 +12,7 @@
       "nombre": "H de Harry",
       "tipo": "juvenil",
       "importe": 50,
-      "imagen": "./images/libro8.jpg",
+      "imagen": "https://drive.google.com/uc?export=view&id=15nBsDKJcTHQPQqIXhHWUxaCXGrQJdUcx",
       "destacado": true
    },
    {
@@ -20,7 +20,7 @@
       "nombre": "Ciudad medialuna",
       "tipo": "juvenil",
       "importe": 80,
-      "imagen": "./images/libro3.jpg",
+      "imagen": "https://drive.google.com/uc?export=view&id=1pyRTyV1q8IfkpVV5VXdayA-_tGuapAj1",
       "destacado": true
    },
    {
@@ -28,7 +28,7 @@
       "nombre": "Fleur",
       "tipo": "juvenil",
       "importe": 70,
-      "imagen": "./images/libro4.jpg",
+      "imagen": "https://drive.google.com/uc?export=view&id=1xTi8nu4OniADj62jGudiE9RrB3vjxnyo",
       "destacado": true
    },
    {
@@ -36,7 +36,7 @@
       "nombre": "Gravity Falls",
       "tipo": "infantil",
       "importe": 30,
-      "imagen": "./images/libro5.jpg",
+      "imagen": "https://drive.google.com/uc?export=view&id=1AhCymRNya1h2p-vZTYsHFD8Oa1A8SDVL",
       "destacado": true
    },
    {
@@ -44,7 +44,7 @@
       "nombre": "El Principito",
       "tipo": "infantil",
       "importe": 40,
-      "imagen": "./images/libro6.jpg",
+      "imagen": "https://drive.google.com/uc?export=view&id=18IOjgFShZSlqylgHHSllsuszkm81TCW9",
       "destacado": true
    },
    {
@@ -52,7 +52,7 @@
       "nombre": "Cuentos silenciosos",
       "tipo": "infantil",
       "importe": 30,
-      "imagen": "./images/libro7.jpg",
+      "imagen": "https://drive.google.com/uc?export=view&id=1DcbYGUkguAJprLNOhEl98XS4ZMbA7Aoz",
       "destacado": true
    },
    {
@@ -60,7 +60,7 @@
       "nombre": "Aventuras de S.H",
       "tipo": "fantasia",
       "importe": 60,
-      "imagen": "https://images.cdn2.buscalibre.com/fit-in/360x360/8e/28/8e2808346ffb11afb7f118576999050a.jpg",
+      "imagen": "https://drive.google.com/uc?export=view&id=10njNr3mDHVkVCfMc6Q5OmNi44HQiNI_m",
       "destacado": true
    }
 ]
