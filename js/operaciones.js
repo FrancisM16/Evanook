@@ -1,9 +1,20 @@
 import { Libro } from "./libroClass.js"
-const URL = `js/datos.json`
+const URL = `http://127.0.0.1:5501/js/datos.json`
 export const librosTotales = []
 
-function crearTarjetas(data) {
+function crearTarjetasDestacadas(data) {
     const libros = document.getElementById("libros");
+    data = data.filter(lib => lib.destacado == true)
+    crearTarjetas(data, libros)
+}
+
+function crearTarjetasFantasia(data) {
+    const libros = document.getElementById("librosFantasia");
+    data = data.filter(lib => lib.tipo == "fantasía")
+    crearTarjetas(data, libros)
+}
+
+function crearTarjetas(data, libros) {
     data.forEach((data) => {
         const libro = new Libro(data.id, data.nombre, data.tipo, data.importe, data.imagen)
         librosTotales.push(libro)
@@ -29,8 +40,11 @@ const obtenerContenido = (URL) => {
     fetch(URL)
         .then((response) => response.json())
         .then((data) => {
-            crearTarjetas(data)
+            crearTarjetasDestacadas(data)
+            //crearTarjetasFantasia(data)
         })
+        .catch((e) => { console.log({ e }) })
 }
 
 obtenerContenido(URL)
+console.log(URL)

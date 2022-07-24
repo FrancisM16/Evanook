@@ -1,44 +1,66 @@
 [
-    {
-       "id": 1,
-       "nombre": "Roma soy yo",
-       "tipo":"fantasia",
-       "importe": 50,
-       "imagen": "./images/libro1.jpg"
-    },
-    {
-        "id": 2,
-        "nombre": "Aventuras de S.H",
-        "tipo":"fantasia",
-        "importe": 60,
-        "imagen": "./images/libro2.jpg"
-    },
-    {
-        "id": 3,
-        "nombre": "Ciudad medialuna",
-        "tipo":"juvenil",
-        "importe": 80,
-        "imagen": "./images/libro3.jpg"
-     },
-     {
-        "id": 4,
-        "nombre": "Fleur",
-        "tipo":"juvenil",
-        "importe": 70,
-        "imagen": "./images/libro4.jpg"
-     },
-     {
-        "id": 5,
-        "nombre": "Gravity Falls",
-        "tipo":"infantil",
-        "importe": 30,
-        "imagen": "./images/libro5.jpg"
-     },
-     {
-        "id": 6,
-        "nombre": "El Principito",
-        "tipo":"infantil",
-        "importe": 40,
-        "imagen": "./images/libro6.jpg"
-     }
- ]
+   {
+      "id": 1,
+      "nombre": "Roma soy yo",
+      "tipo": "fantasía",
+      "importe": 50,
+      "imagen": "../images/libro1.jpg",
+      "destacado": true
+   },
+   {
+      "id": 2,
+      "nombre": "H de Harry",
+      "tipo": "juvenil",
+      "importe": 50,
+      "imagen": "../images/libro8.jpg",
+      "destacado": true
+   },
+   {
+      "id": 3,
+      "nombre": "Ciudad medialuna",
+      "tipo": "juvenil",
+      "importe": 80,
+      "imagen": "../images/libro3.jpg",
+      "destacado": true
+   },
+   {
+      "id": 4,
+      "nombre": "Fleur",
+      "tipo": "juvenil",
+      "importe": 70,
+      "imagen": "./images/libro4.jpg",
+      "destacado": true
+   },
+   {
+      "id": 5,
+      "nombre": "Gravity Falls",
+      "tipo": "infantil",
+      "importe": 30,
+      "imagen": "./images/libro5.jpg",
+      "destacado": true
+   },
+   {
+      "id": 6,
+      "nombre": "El Principito",
+      "tipo": "infantil",
+      "importe": 40,
+      "imagen": "./images/libro6.jpg",
+      "destacado": true
+   },
+   {
+      "id": 7,
+      "nombre": "Cuentos silenciosos",
+      "tipo": "infantil",
+      "importe": 30,
+      "imagen": "./images/libro7.jpg",
+      "destacado": true
+   },
+   {
+      "id": 8,
+      "nombre": "Aventuras de S.H",
+      "tipo": "fantasía",
+      "importe": 60,
+      "imagen": "./images/libro2.jpg",
+      "destacado": true
+   }
+]
