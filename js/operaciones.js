@@ -1,5 +1,6 @@
 import { Libro } from "./libroClass.js"
-const URL = `http://127.0.0.1:5501/datos.json`
+const URL = window.location.origin + `/datos.json`
+console.log(URL)
 export const librosTotales = []
 
 function obtenerLibrosFiltrados(data, ubicacion) {
