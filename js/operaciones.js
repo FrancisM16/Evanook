@@ -19,7 +19,8 @@ function obtenerLibrosFiltrados(data, ubicacion) {
 
 function filtrarTarjetas(data, ubicacion) {
     const libros = document.getElementById("libros");
-    const librosFiltrados = obtenerLibrosFiltrados(data, ubicacion)
+    //const librosFiltrados = obtenerLibrosFiltrados(data, ubicacion)
+    const librosFiltrados = data.filter(lib => lib.destacado == true)
     crearTarjetas(librosFiltrados, libros)
 }
 
