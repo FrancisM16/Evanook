@@ -1,100 +1,171 @@
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <title>Evanook</title>
-    <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,700;0,900;1,400&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
-    <link rel="stylesheet" href="css/estilos.css">
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <title>Evanook</title>
+    <link rel="shortcut icon" href="images/logo.png" type="image/x-icon" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,700;0,900;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
+    <link rel="stylesheet" href="css/estilos.css" />
     <script type="module" src="js/operaciones.js" id="operaciones"></script>
-    <script src="js/listener.js"></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <!-- MENÚ -->
     <nav class="navbar fixed-top navbar-expand-lg bg-white">
-        <div class="container">
-            <a class="navbar-brand d-flex align-items-center" href="index.html">
-                <img src="images/logo.png" alt="Eventos Holimori" width="24" height="24">
-                <span class="navbar__title px-2">Evanook</span>
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="index.html">
+          <img
+            src="images/logo.png"
+            alt="Eventos Holimori"
+            width="24"
+            height="24"
+          />
+          <span class="navbar__title px-2">Evanook</span>
+        </a>
+        <button
+          class="navbar-toggler custom-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navMenu"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse order-lg-1" id="navMenu">
+          <ul class="navbar-nav ms-auto" id="navbar__categories">
+            <li class="nav-item px-2 py-2"><a href="#">Inicio</a></li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarScrollingDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Productos
+              </a>
+              <ul
+                class="dropdown-menu"
+                aria-labelledby="navbarScrollingDropdown"
+              >
+                <li>
+                  <a class="dropdown-item" href="pages/fantasia.html"
+                    >Fantasía</a
+                  >
+                </li>
+                <li><a class="dropdown-item" href="#">Infantil</a></li>
+                <li><a class="dropdown-item" href="#">Juvenil</a></li>
+              </ul>
+            </li>
+          </ul>
+          <div
+            class="order-lg-2 nav-btns mx-2 d-flex justify-content-center"
+            id="btn__car"
+          >
+            <a type="button" class="shadow-none btn" href="pages/carrito.html">
+              <i class="fa fa-shopping-cart"></i>
             </a>
-            <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navMenu">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse order-lg-1" id="navMenu">
-                <ul class="navbar-nav ms-auto" id="navbar__categories">
-                    <li class="nav-item px-2 py-2"><a href="#">Inicio</a></li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                          Productos
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                          <li><a class="dropdown-item" href="pages/fantasia.html">Fantasía</a></li>
-                          <li><a class="dropdown-item" href="#">Infantil</a></li>
-                          <li><a class="dropdown-item" href="#">Juvenil</a></li>
-                        </ul>
-                    </li>
-                </ul>
-                <div class="order-lg-2 nav-btns mx-2 d-flex justify-content-center" id="btn__car">
-                    <a type="button" class="shadow-none btn" href="pages/carrito.html">
-                        <i class="fa fa-shopping-cart"></i>
-                    </a>
-                </div>
-            </div>
+          </div>
         </div>
+      </div>
     </nav>
 
     <section id="home">
-        <div class="container text-center">
-            <div class="row justify-content-center">
-                <div class="col-md-10">
-                    <h1>Evanook está para ti</h1>
-                    <p class="text-white">Encuentra todos tus libros favoritos aquí</p>
-                    <a class="boton" href="#libros">Ver destacados</a>
-                </div>
-            </div>
+      <div class="container text-center">
+        <div class="row justify-content-center">
+          <div class="col-md-10">
+            <h1>Evanook está para ti</h1>
+            <p class="text-white">Encuentra todos tus libros favoritos aquí</p>
+            <a class="boton" href="#libros">Ver destacados</a>
+          </div>
         </div>
+      </div>
     </section>
 
     <section id="collection" class="py-5">
-        <div class="container">
-            <div class="title text-center">
-                <h2 class="position-relative d-inline-block">Libros destacados</h2>
-                <p class="text-muted">Aquí encontrarás los libros más destacados por categoría</p>
-            </div>
-
-            <div class="row g-0">
-                <div id="filters" class="d-flex flex-wrap justify-content-center mt-2 filter-button-group">
-                    <button type="button" class="btn shadow-none boton__active m-2" data-filter="todo">Todo</button>
-                    <button type="button" class="btn shadow-none m-2" data-filter="fantasia">Fantasia</button>
-                    <button type="button" class="btn shadow-none m-2" data-filter="infantil">Infantil</button>
-                    <button type="button" class="btn shadow-none m-2" data-filter="juvenil">Juvenil</button>
-                </div>
-            </div>
-
-            <div class="row mt-3" id="libros">
-            </div>
-
+      <div class="container">
+        <div class="title text-center">
+          <h2 class="position-relative d-inline-block">Libros destacados</h2>
+          <p class="text-muted">
+            Aquí encontrarás los libros más destacados por categoría
+          </p>
         </div>
+
+        <div class="row g-0">
+          <div
+            id="filters"
+            class="d-flex flex-wrap justify-content-center mt-2 filter-button-group"
+          >
+            <button
+              type="button"
+              class="btn shadow-none boton__active m-2"
+              data-filter="todo"
+            >
+              Todo
+            </button>
+            <button
+              type="button"
+              class="btn shadow-none m-2"
+              data-filter="fantasia"
+            >
+              Fantasia
+            </button>
+            <button
+              type="button"
+              class="btn shadow-none m-2"
+              data-filter="infantil"
+            >
+              Infantil
+            </button>
+            <button
+              type="button"
+              class="btn shadow-none m-2"
+              data-filter="juvenil"
+            >
+              Juvenil
+            </button>
+          </div>
+        </div>
+
+        <div class="row mt-3" id="libros"></div>
+      </div>
     </section>
 
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
-        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
-        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
-        crossorigin="anonymous"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-</body>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+      integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+      integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
+    ></script>
+  </body>
 </html>
