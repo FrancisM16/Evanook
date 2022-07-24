@@ -1,7 +1,14 @@
 import { Libro } from "./libroClass.js"
-const URL = window.location.origin + `/datos.json`
-console.log(URL)
+let URL
 export const librosTotales = []
+
+if (window.location.origin == "https://francism16.github.io") {
+    URL = "https://francism16.github.io/Evanook/datos.json"
+} else {
+    URL = "http://127.0.0.1:5501/datos.json"
+}
+
+console.log(URL)
 
 function obtenerLibrosFiltrados(data, ubicacion) {
     switch (ubicacion) {
