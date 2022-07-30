@@ -72,6 +72,7 @@ function mostrarLibrosComprados() {
                     cancelButton: 'btn',
                     confirmButton: 'boton'
                 },
+                showCloseButton: true,
                 cancelButtonText: 'No, cancelar',
                 confirmButtonText: 'Sí, pagar',
                 allowOutsideClick: false
@@ -79,7 +80,7 @@ function mostrarLibrosComprados() {
                 if (result.isConfirmed) {
                     localStorage.removeItem("localLibros")
                     Swal.fire({
-                        title: '¡Compra exitosa!',
+                        title: '¡Pago exitoso!',
                         text: "En los próximos días se te enviará tu pedido",
                         footer: '<a href="../index.html" class="botonFooter">Seguir comprando</a>',
                         customClass: {
