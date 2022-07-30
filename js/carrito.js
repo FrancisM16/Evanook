@@ -1,13 +1,9 @@
-const encabezadoValores = ['ID', 'Nombre', 'Cantidad', 'Precio Final']
-//const btnBorrarCarrito = document.getElementById("btnBorrar")
-let suma = 0.0;
-
-export function recuperoDatos() {
-    return JSON.parse(localStorage.getItem("localLibros")) ?? []
-}
+const encabezadoValores = ['ID', 'Nombre', 'Cant', 'Precio Final', 'Acciones']
+const tabla = document.querySelector("table")
+let suma = 0.0
 
 function mostrarLibrosComprados() {
-    const misLibros = recuperoDatos()
+    let misLibros = JSON.parse(localStorage.getItem("localLibros")) ?? []
     if (misLibros.length > 0) {
         const encabezadoTabla = document.querySelector("thead")
         encabezadoTabla.innerHTML = ""
@@ -25,7 +21,7 @@ function mostrarLibrosComprados() {
             const th = document.createElement("th")
             th.innerText = encabezado
             th.id = encabezado + "en"
-            tr.append(th);
+            tr.append(th)
         }
         encabezadoTabla.append(tr)
 
@@ -37,23 +33,74 @@ function mostrarLibrosComprados() {
             for (const valor of valores) {
                 const td = document.createElement("td")
                 td.innerText = valor
-                tr.append(td);
+                tr.append(td)
             }
+            const td = document.createElement("td")
+            td.innerHTML = '<i class="fa fa-trash botonBorrar"></i>'
+            td.addEventListener("click", () => {
+                misLibros = misLibros.filter(lib => lib.id != libro.id)
+                let str = JSON.stringify(misLibros)
+                localStorage.setItem("localLibros", str)
+                location.reload()
+            })
+            tr.append(td)
             cuerpoTabla.append(tr)
-        });
+        })
 
         const p = document.createElement("p")
-        const seccion = document.querySelector("#productosCarrito div");
+        const seccion = document.querySelector("#productosCarrito div #precio")
         seccion.append(p)
         p.innerText = "El precio total es $" + suma.toFixed(1)
+
+        const botones = document.getElementById("botones");
+        botones.innerHTML = `<button class="boton" id="botonConfirmar"> Confirmar compra </button>
+                            <button class="btn shadow-none m-2" id="botonLimpiar"> Limpiar </button>`
+
+        botonLimpiar.addEventListener("click", () => {
+            localStorage.removeItem("localLibros")
+            location.reload()
+        });
+
+        botonConfirmar.addEventListener("click", () => {
+            Swal.fire({
+                title: 'Confirmar compra',
+                text: "¿Deseas pagar $" + suma.toFixed(1) + " por tus libros?",
+                icon: 'question',
+                showCancelButton: true,
+                confirmButtonColor: '#000000',
+                customClass: {
+                    cancelButton: 'btn',
+                    confirmButton: 'boton'
+                },
+                cancelButtonText: 'No, cancelar',
+                confirmButtonText: 'Sí, pagar',
+                allowOutsideClick: false
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    localStorage.removeItem("localLibros")
+                    Swal.fire({
+                        title: '¡Compra exitosa!',
+                        text: "En los próximos días se te enviará tu pedido",
+                        footer: '<a href="../index.html" class="botonFooter">Seguir comprando</a>',
+                        customClass: {
+                            confirmButton: 'boton',
+                        },
+                        icon: 'success',
+                        allowOutsideClick: false
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            location.reload()
+                        }
+                    })
+                }
+            })
+        })
+
+
 
     }
 }
 
-// btnBorrarCarrito.addEventListener('click', (e) => {
-//     localStorage.removeItem("localLibros")
-// }
-// )
 
 mostrarLibrosComprados()
 

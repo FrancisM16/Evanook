@@ -1,14 +1,13 @@
 import { Libro } from "./libroClass.js"
-let URL
-export const librosTotales = []
+import { addButtonsActions } from "./productos.js";
+let URL = "../datos.json"
+const librosTotales = []
 
-if (window.location.origin == "https://francism16.github.io") {
+/* if (window.location.origin == "https://francism16.github.io") {
     URL = "https://francism16.github.io/Evanook/datos.json"
 } else {
     URL = "http://127.0.0.1:5501/datos.json"
-}
-
-console.log(URL)
+} */
 
 function obtenerLibrosFiltrados(data, ubicacion) {
     switch (ubicacion) {
@@ -27,8 +26,7 @@ function obtenerLibrosFiltrados(data, ubicacion) {
 
 function filtrarTarjetas(data, ubicacion) {
     const libros = document.getElementById("libros");
-    //const librosFiltrados = obtenerLibrosFiltrados(data, ubicacion)
-    const librosFiltrados = data.filter(lib => lib.destacado == true)
+    const librosFiltrados = obtenerLibrosFiltrados(data, ubicacion)
     crearTarjetas(librosFiltrados, libros)
 }
 
@@ -52,17 +50,21 @@ function crearTarjetas(data, libros) {
                                 </div>
                             </div>`
     });
+    addButtonsActions(librosTotales);
 }
 
 const obtenerOrigenUrl = (ruta) => {
-    if (ruta.includes("pages")) {
-        const rutaParseada = ruta.split("/")[2]
-        return rutaParseada.substring(0, rutaParseada.length - 5)
-    } else {
-        const rutaParseada = ruta.split("/")[1]
-        return rutaParseada.substring(0, rutaParseada.length - 5)
+    if (ruta.includes("fantasia")) {
+        return "fantasia";
     }
-}
+    if (ruta.includes("infantil")) {
+        return "infantil";
+    }
+    if (ruta.includes("juvenil")) {
+        return "juvenil";
+    }
+    return "index";
+};
 
 const obtenerContenido = (URL) => {
     fetch(URL)
@@ -76,4 +78,3 @@ const obtenerContenido = (URL) => {
 }
 
 obtenerContenido(URL)
-console.log(URL)
