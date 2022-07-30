@@ -1,13 +1,7 @@
 import { Libro } from "./libroClass.js"
 import { addButtonsActions } from "./productos.js";
-let URL = "../datos.json"
+import { URL } from "./env.js";
 const librosTotales = []
-
-/* if (window.location.origin == "https://francism16.github.io") {
-    URL = "https://francism16.github.io/Evanook/datos.json"
-} else {
-    URL = "http://127.0.0.1:5501/datos.json"
-} */
 
 function obtenerLibrosFiltrados(data, ubicacion) {
     switch (ubicacion) {
