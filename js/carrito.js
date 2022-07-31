@@ -13,18 +13,24 @@ const mostrarLibrosComprados = () => {
         })
 
         misLibros.forEach((libro) => {
+            const filaTabla = document.createElement("tr")
             let precio = parseFloat((libro.precio * libro.cantidad))
             let precioLibros = precio.toLocaleString(undefined, { minimumFractionDigits: 1, maximumFractionDigits: 1 })
+            const valores = [libro.id, libro.titulo, libro.cantidad, "$" + precioLibros]
             suma += precio
-            cuerpoTabla.innerHTML += `<tr data-libro="${libro.id}">
-                                            <td>${libro.id}</td>
-                                            <td>${libro.titulo}</td>
-                                            <td>${libro.cantidad}</td>
-                                            <td>$${precioLibros}</td>
-                                            <td class="borrar"><i class="fa fa-trash botonBorrar"></i></td>
-                                    </tr>`
+
+            valores.forEach((valor) => {
+                const filaDato = document.createElement("td")
+                filaDato.innerText = valor
+                filaTabla.append(filaDato)
+            })
+
+            const botonBorrar = document.createElement("td")
+            botonBorrar.innerHTML = '<i class="fa fa-trash botonBorrar"></i>'
+            eliminarLibro(botonBorrar, misLibros, libro)
+            filaTabla.append(botonBorrar)
+            cuerpoTabla.append(filaTabla)
         })
-        eliminarLibro(misLibros)
 
         const precio = document.querySelector("#precio")
         const precioFinal = suma.toLocaleString(undefined, { minimumFractionDigits: 1, maximumFractionDigits: 1 })
@@ -45,21 +51,12 @@ const mostrarLibrosComprados = () => {
     }
 }
 
-const eliminarLibro = (misLibros) => {
-    const botonBorrar = document.querySelectorAll(".borrar")
-    botonBorrar.forEach((boton) => {
-        boton.addEventListener("click", (e) => {
-            e.preventDefault()
-            const id = parseInt(e.target
-                .parentNode
-                .parentNode
-                .dataset
-                .libro)
-            misLibros = misLibros.filter(lib => lib.id != id)
-            let str = JSON.stringify(misLibros)
-            localStorage.setItem("localLibros", str)
-            location.reload()
-        })
+const eliminarLibro = (botonBorrar, misLibros, libro) => {
+    botonBorrar.addEventListener("click", () => {
+        misLibros = misLibros.filter(lib => lib.id != libro.id)
+        let str = JSON.stringify(misLibros)
+        localStorage.setItem("localLibros", str)
+        location.reload()
     })
 }
 
