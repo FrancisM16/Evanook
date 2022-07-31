@@ -1,6 +1,6 @@
 import { Libro } from "./libroClass.js"
-import { agregarCarrito } from "./logica.js";
-import { URL } from "./env.js";
+import { agregarCarrito } from "./logica.js"
+import { URL } from "./env.js"
 const librosTotales = []
 
 const obtenerLibrosFiltrados = (data, ubicacion) => {
@@ -19,7 +19,7 @@ const obtenerLibrosFiltrados = (data, ubicacion) => {
 }
 
 const filtrarTarjetas = (data, ubicacion) => {
-    const libros = document.querySelector("#libros");
+    const libros = document.querySelector("#libros")
     const librosFiltrados = obtenerLibrosFiltrados(data, ubicacion)
     crearTarjetas(librosFiltrados, libros)
 }

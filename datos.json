@@ -3,7 +3,7 @@
       "id": 1,
       "nombre": "Roma soy yo",
       "tipo": "fantasia",
-      "importe": 50,
+      "importe": 55,
       "imagen": "https://drive.google.com/uc?export=view&id=1g1KC4nniLERZD5mSrsNQpi1OM45p_2yW",
       "destacado": true
    },
@@ -11,7 +11,7 @@
       "id": 2,
       "nombre": "H de Harry",
       "tipo": "juvenil",
-      "importe": 50,
+      "importe": 48,
       "imagen": "https://drive.google.com/uc?export=view&id=15nBsDKJcTHQPQqIXhHWUxaCXGrQJdUcx",
       "destacado": true
    },
@@ -62,5 +62,37 @@
       "importe": 60,
       "imagen": "https://drive.google.com/uc?export=view&id=10njNr3mDHVkVCfMc6Q5OmNi44HQiNI_m",
       "destacado": true
+   },
+   {
+      "id": 9,
+      "nombre": "El viaje de Chihiro",
+      "tipo": "juvenil",
+      "importe": 45,
+      "imagen": "https://drive.google.com/uc?export=view&id=18AaCo_61lk2vj4jfQp03_DiVO6RhuC78",
+      "destacado": false
+   },
+   {
+      "id": 10,
+      "nombre": "Montaña mágica",
+      "tipo": "fantasia",
+      "importe": 34,
+      "imagen": "https://drive.google.com/uc?export=view&id=1ZTNlpIQQK40osAZh_maKp3DeqLn5wdts",
+      "destacado": false
+   },
+   {
+      "id": 11,
+      "nombre": "Montaña mágica",
+      "tipo": "fantasia",
+      "importe": 27,
+      "imagen": "https://drive.google.com/uc?export=view&id=1ZT2nJr5vXdHe36lq3GpatBvYnGxZZB05",
+      "destacado": false
+   },
+   {
+      "id": 12,
+      "nombre": "Mujercitas",
+      "tipo": "infantil",
+      "importe": 24,
+      "imagen": "https://drive.google.com/uc?export=view&id=1NP3n2ExOh04E8Vb4-y3-FNLUEJVcBRgT",
+      "destacado": false
    }
 ]

@@ -26,7 +26,8 @@ const mostrarLibrosComprados = () => {
         eliminarLibro(misLibros)
 
         const precio = document.querySelector("#precio")
-        precio.innerHTML = `<p>El precio total es $${suma.toFixed(1)}</p>`
+        const precioFinal = suma.toLocaleString(undefined, { minimumFractionDigits: 1, maximumFractionDigits: 1 })
+        precio.innerHTML = `<p>El precio total es $${precioFinal}</p>`
 
         const botones = document.querySelector("#botones");
         botones.innerHTML = `<button class="boton" id="botonConfirmar"> Confirmar compra </button>
@@ -38,7 +39,7 @@ const mostrarLibrosComprados = () => {
         });
 
         botonConfirmar.addEventListener("click", () => {
-            crearModalConfirmacion()
+            crearModalConfirmacion(precioFinal)
         })
     }
 }
@@ -61,10 +62,10 @@ const eliminarLibro = (misLibros) => {
     })
 }
 
-const crearModalConfirmacion = () => {
+const crearModalConfirmacion = (precioFinal) => {
     Swal.fire({
         title: "Confirmar compra",
-        text: "¿Deseas pagar $" + suma.toFixed(1) + " por tus libros?",
+        text: "¿Deseas pagar $" + precioFinal + " por tus libros?",
         icon: "question",
         showCancelButton: true,
         customClass: {
