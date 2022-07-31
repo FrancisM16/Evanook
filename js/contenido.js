@@ -1,9 +1,9 @@
 import { Libro } from "./libroClass.js"
-import { addButtonsActions } from "./productos.js";
+import { agregarCarrito } from "./logica.js";
 import { URL } from "./env.js";
 const librosTotales = []
 
-function obtenerLibrosFiltrados(data, ubicacion) {
+const obtenerLibrosFiltrados = (data, ubicacion) => {
     switch (ubicacion) {
         case "index":
             return data.filter(lib => lib.destacado == true)
@@ -18,13 +18,13 @@ function obtenerLibrosFiltrados(data, ubicacion) {
     }
 }
 
-function filtrarTarjetas(data, ubicacion) {
-    const libros = document.getElementById("libros");
+const filtrarTarjetas = (data, ubicacion) => {
+    const libros = document.querySelector("#libros");
     const librosFiltrados = obtenerLibrosFiltrados(data, ubicacion)
     crearTarjetas(librosFiltrados, libros)
 }
 
-function crearTarjetas(data, libros) {
+const crearTarjetas = (data, libros) => {
     data.forEach((data) => {
         const libro = new Libro(data.id, data.nombre, data.tipo, data.importe, data.imagen)
         librosTotales.push(libro)
@@ -43,8 +43,8 @@ function crearTarjetas(data, libros) {
                                     </div>
                                 </div>
                             </div>`
-    });
-    addButtonsActions(librosTotales);
+    })
+    agregarCarrito(librosTotales)
 }
 
 const obtenerOrigenUrl = (ruta) => {

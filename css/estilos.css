@@ -92,10 +92,6 @@ h4 {
   box-shadow: none !important;
 }
 
-/* #bot:focus{
-    box-shadow: none;
-} */
-
 .boton:hover {
   background-color: #dd2471 !important;
   border: 1px solid #dd2471 !important;
@@ -119,6 +115,11 @@ h4 {
 .botonFooter:hover {
   color: #dd2471 !important;
 }
+
+.botonCerrar {
+  box-shadow: none !important;
+}
+
 .btn:not(.boton__active) {
   background-color: #fff !important;
   color: rgb(85, 85, 85) !important;
