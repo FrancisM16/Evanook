@@ -5,7 +5,7 @@ const librosTotales = []
 
 const obtenerLibrosFiltrados = (data, ubicacion) => {
     switch (ubicacion) {
-        case "index":
+        case "/":
             return data.filter(lib => lib.destacado == true)
         case "fantasia":
             return data.filter(lib => lib.tipo == "fantasia")
@@ -57,7 +57,7 @@ const obtenerOrigenUrl = (ruta) => {
     if (ruta.includes("juvenil")) {
         return "juvenil";
     }
-    return "index";
+    return "/";
 };
 
 const obtenerContenido = (URL) => {

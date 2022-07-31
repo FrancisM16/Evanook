@@ -84,7 +84,7 @@ const crearModalConfirmacion = () => {
             Swal.fire({
                 title: "¡Pago exitoso!",
                 text: "En los próximos días se te enviará tu pedido",
-                footer: '<a href="../index.html" class="botonFooter">Seguir comprando</a>',
+                footer: '<a href="../" class="botonFooter">Seguir comprando</a>',
                 customClass: {
                     confirmButton: "boton",
                 },
