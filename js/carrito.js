@@ -13,13 +13,14 @@ const mostrarLibrosComprados = () => {
         })
 
         misLibros.forEach((libro) => {
-            let precio = parseFloat((libro.precio * libro.cantidad).toFixed(1))
+            let precio = parseFloat((libro.precio * libro.cantidad))
+            let precioFinal = precio.toLocaleString(undefined, { minimumFractionDigits: 1, maximumFractionDigits: 1 })
             suma += precio
             cuerpoTabla.innerHTML += `<tr data-libro="${libro.id}">
                                             <td>${libro.id}</td>
                                             <td>${libro.titulo}</td>
                                             <td>${libro.cantidad}</td>
-                                            <td>$${precio}</td>
+                                            <td>$${precioFinal}</td>
                                             <td class="borrar"><i class="fa fa-trash botonBorrar"></i></td>
                                     </tr>`
         })
