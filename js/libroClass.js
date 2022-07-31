@@ -8,6 +8,6 @@ export class Libro {
         this.imagen = imagen
     }
     precioFinal() {
-        return parseFloat((this.importe * (Libro.IGV + 1)).toFixed(1))
+        return (this.importe * (Libro.IGV + 1)).toLocaleString(undefined, { minimumFractionDigits: 1, maximumFractionDigits: 1 })
     }
 } 
